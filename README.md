@@ -14,5 +14,7 @@ Open up the dev console for some guidance.
 Test on mobile to see different fps results.
 Record a timeline from Chrome dev tools to see interesting results.
 
+Search for `ADD NEW TESTS HERE` to add new tests yourself!
+
 Original setup came from `https://github.com/belohlavek/phaser-es6-boilerplate`
 

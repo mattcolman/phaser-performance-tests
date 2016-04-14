@@ -74,6 +74,7 @@ Game.prototype.tests = [
   ['Graphics redraw bitmap data', GraphicsRedrawBMD],
   ['Text WebFont', TextWebFont],
   ['Text BitmapFont', TextBitmapFont],
+  // ----------- ADD NEW TESTS HERE!! ----------- \\
 ]
 
 Game.prototype.states = [
