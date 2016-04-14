@@ -10,7 +10,7 @@ class GameState extends Phaser.State {
     this.game.time.advancedTiming = true
     this.stage.backgroundColor = "#4488AA";
     this.fpsTxt = this.game.add.text(50, 20, this.game.time.fps || '--', { font: "24px Arial", fill: "#00ff00" })
-    let txt = this.add.text(this.world.centerX, 50, this.name || this.game.state.current, { font: "bold 32px Arial", fill: "#fff"})
+    let txt = this.add.text(this.world.centerX, 50, this.name || this.game.state.current, { font: `30px ${Font.Panton.EXTRA_BOLD_ITALIC}`, fill: "#fff"})
     txt.anchor.set(.5)
   }
 
@@ -45,14 +45,6 @@ class GameState extends Phaser.State {
     this.fpsTxt.bringToTop()
   }
 
-  makeButton(str, x, y) {
-    var style = { font: "bold 32px Arial", fill: "#fff"};
-    let txt = this.add.text(x, y, str, style)
-    txt.anchor.set(.5, 0)
-    txt.inputEnabled = true
-    txt.events.onInputUp.add(this.handleClick, this, 0, str)
-  }
-
   handleClick(pointer, e, type) {
     console.log('clicked', type)
     if (type == 'next') {
@@ -80,7 +72,7 @@ class GameState extends Phaser.State {
     }
     rect.setColor(0xffffff)
 
-    let txt = this.game.add.text(0, 0, str, {font: `24px ${Font.Panton.EXTRA_BOLD_ITALIC}`, fill: "#333", align: 'center'}, group)
+    let txt = this.game.add.text(0, 0, str, {font: `24px ${Font.Panton.EXTRA_BOLD_REGULAR}`, fill: "#333", align: 'center'}, group)
     txt.wordWrap = true
     txt.wordWrapWidth = w-10
 

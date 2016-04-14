@@ -21,7 +21,7 @@ class Lobby extends GameState {
     let xPadding = 100
     let yPadding = 100
     let grid = new GridLayout(this.game, this.world, new Phaser.Rectangle(xPadding, 150, this.world.width - xPadding*2, this.world.height - yPadding*2), {
-      numColumns: 2,
+      numColumns: 5,
       numRows: 3,
       xPadding: 10
     })
@@ -36,7 +36,7 @@ class Lobby extends GameState {
       grid.add(btn)
     })
 
-    let btn = this.addButton(this.world, this.world.width/2, this.world.height - 200, 200, 100, "Run all tests")
+    let btn = this.addButton(this.world, this.world.width/2, this.world.height - 150, 200, 100, "Run all tests")
     btn.rect.events.onInputUp.add(()=> {
       this.game.stateQueue = _.map(this.game.tests, (test)=> test[0]).concat(['Results'])
       this.state.start(this.game.stateQueue.shift())

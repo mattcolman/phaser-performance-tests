@@ -8,8 +8,10 @@ class Results extends GameState {
   create() {
     super.create()
 
-    console.log('Results', this.game.results)
+    console.log(this.game.results)
+
     this.printResults(this.game.results)
+
     let btn = this.addButton(this.world, this.world.centerX, this.world.height - 100, 200, 100, 'Back to Lobby')
     btn.rect.events.onInputUp.add(()=> {
       this.game.state.start('lobby')
