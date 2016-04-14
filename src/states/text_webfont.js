@@ -7,6 +7,4 @@ var TextWebFont = Object.assign(Object.create(TextTest.prototype), {
   }
 })
 
-console.log('TextWebFont', TextWebFont)
-
 export default TextWebFont;

@@ -7,6 +7,4 @@ var TextBitmapFont = Object.assign(Object.create(TextTest.prototype), {
   }
 })
 
-console.log('TextBitmapFont', TextBitmapFont)
-
 export default TextBitmapFont;
