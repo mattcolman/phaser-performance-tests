@@ -21,12 +21,12 @@ class GameState extends Phaser.State {
   }
 
   idle() {
-    console.log('start idle')
+    console.log(`setting idle for ${TEST_LENGTH/1000} seconds`)
     this.game.time.events.add(TEST_RECORDING_TIME, this.recordFPS, this, 'idle')
   }
 
   animate() {
-    console.log('start animate')
+    console.log(`setting animate for ${TEST_LENGTH/1000} seconds`)
     this.game.time.events.add(TEST_RECORDING_TIME, this.recordFPS, this, 'animate')
   }
 
@@ -37,6 +37,10 @@ class GameState extends Phaser.State {
   }
 
   complete() {
+    console.log(`
+    ${this.game.state.current} COMPLETE!
+    Description: ${this.config.description}
+    `)
     this.game.state.start(this.game.stateQueue.shift())
   }
 

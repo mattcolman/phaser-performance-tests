@@ -48,6 +48,7 @@ class GraphicsTest extends GameState {
 
   animate() {
     super.animate()
+    this.mainTween.stop()
     this.tweener.value = 0
     this.mainTween.start()
     this.willUpdateCircles = true

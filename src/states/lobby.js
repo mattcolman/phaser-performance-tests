@@ -44,7 +44,7 @@ class Lobby extends GameState {
 
     grid.update()
 
-    this.game.results = "RESULTS:\n"
+    this.game.results = ""
   }
 
 }
