@@ -5,8 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "gulp",
-    "production": "gulp --production",
-    "test": "gulp test"
+    "production": "gulp --production"
   },
   "author": "Matt Colman",
   "license": "MIT",
