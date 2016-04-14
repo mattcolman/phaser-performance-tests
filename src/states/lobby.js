@@ -21,7 +21,7 @@ class Lobby extends GameState {
     let xPadding = 100
     let yPadding = 100
     let grid = new GridLayout(this.game, this.world, new Phaser.Rectangle(xPadding, 150, this.world.width - xPadding*2, this.world.height - yPadding*2), {
-      numColumns: 3,
+      numColumns: 2,
       numRows: 3,
       xPadding: 10
     })
