@@ -1,5 +1,4 @@
 import GameState from './states/game_state';
-import $ from "jquery";
 import Boot from './states/boot';
 import TextWebFont from './states/text_webfont'
 import TextBitmapFont from './states/text_bitmapfont'

@@ -1,5 +1,5 @@
 {
-  "name": "phaser performance tests",
+  "name": "phaser-performance-tests",
   "version": "0.0.1",
   "description": "Built with Phaser and ES6",
   "main": "src/index.js",
@@ -21,9 +21,8 @@
     "gulp-if": "^1.2.5",
     "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.6",
-    "phantomjs-prebuilt": "^2.1.7",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.7.0",
+    "webfontloader": "^1.6.24",
     "yargs": "^3.16.1"
   },
   "dependencies": {
