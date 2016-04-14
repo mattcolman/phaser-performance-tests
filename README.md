@@ -10,5 +10,9 @@ Run a development build...
 
 `npm start`
 
+Open up the dev console for some guidance.
+Test on mobile to see different fps results.
+Record a timeline from Chrome dev tools to see interesting results.
+
 Original setup came from `https://github.com/belohlavek/phaser-es6-boilerplate`
 
