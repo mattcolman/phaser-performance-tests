@@ -28,7 +28,7 @@ class SpriteSheetBuilder {
   buildToCache(key) {
     this._sortFrames()
     this._buildFrames()
-    this.game.load.cache.addTextureAtlas(key, null, this.bmd.canvas, this.data, 17)
+    this.game.load.cache.addTextureAtlas(key, null, this.bmd.canvas, this.data, Phaser.Loader.TEXTURE_ATLAS_JSON_ARRAY)
     this.destroy()
   }
 
@@ -52,12 +52,12 @@ class SpriteSheetBuilder {
 
     this.frames.forEach((arr)=> {
       let [key, texture] = arr
-      if (_HelperX > this.width) {
+      if (_HelperX + texture.width > this.width) {
         _HelperX = 0
         _HelperY = _nextY
       }
 
-      if (_HelperY > this.height) {
+      if (_HelperY + texture.height > this.height) {
         console.error('oh dear, no enough from for this sprite')
       }
 
