@@ -6,6 +6,7 @@ import GraphicsRedrawBMD from './states/graphics_redraw_bmd'
 import GraphicsMask from './states/graphics_mask'
 import Lobby from './states/lobby'
 import Results from './states/results'
+import SpriteSheetBuilderTest from './states/spritesheet_builder_test'
 
 class Game extends Phaser.Game {
 
@@ -79,10 +80,11 @@ Game.prototype.tests = [
 
 Game.prototype.states = [
   ['boot', Boot],
-  ['lobby', Lobby],
-].concat(Game.prototype.tests).concat([
-  ['Results', Results]
-])
+  ['Spritesheet Builder Test', SpriteSheetBuilderTest],
+//   ['lobby', Lobby],
+// ].concat(Game.prototype.tests).concat([
+  // ['Results', Results]
+]//)
 
 
 export default Game;
