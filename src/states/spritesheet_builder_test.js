@@ -4,6 +4,14 @@ import {Font} from '../style'
 import GridLayout from '../grid_layout'
 import SpriteSheetBuilder from '../spritesheet_builder'
 
+var Util = {
+  randInt(lo, hi) {
+    return lo + Math.random()*(hi-lo);
+  }
+}
+
+var useSpritesheetBuilder = true
+
 class SpriteSheetBuilderTest extends GameState {
 
   preload() {
@@ -19,6 +27,24 @@ class SpriteSheetBuilderTest extends GameState {
   }
 
   createShapes() {
+    let numCircles = 300
+
+    if (useSpritesheetBuilder) this.addSpriteSheetBuilder(numCircles)
+
+    let xPadding = 10
+    let yPadding = 10
+
+    this.circles = []
+    for (var i = 0; i < numCircles; i++) {
+      let circle = this.addCircle(i)
+      circle.position.set(Util.randInt(0, this.world.width), Util.randInt(0, this.world.height))
+      this.circles.push(circle)
+    }
+  }
+
+  addSpriteSheetBuilder(numCircles) {
+    let ssb = new SpriteSheetBuilder(this.game)
+
     let square = this.game.add.graphics(0, 0)
     square.beginFill(0xff0000)
           .drawRect(0, 0, 100, 100)
@@ -30,33 +56,43 @@ class SpriteSheetBuilderTest extends GameState {
           .drawCircle(0, 0, 100)
     let circleImage = circle.generateTexture()
     circle.destroy()
+    // ssb.addFrames([['square', squareImage], ['circle', circleImage]])
 
-    let ssb = new SpriteSheetBuilder(this.game)
-    ssb.addFrames([['square', squareImage], ['circle', circleImage]])
+    // Draw the atlas
+    // let im = this.game.add.image(0, 0, ssb.bmd)
 
-    let im = this.game.add.image(0, 0, ssb.bmd)
-
-    this.circles = _.times(50, ()=> {
-      return this.addCircle(50, 10)
+    let circles = _.times(numCircles, ()=> {
+      return this.makeBmd(50, 10)
     })
 
     var i = 0
     ssb.addFrames(
-      _.map(this.circles, (circle)=> {
+      _.map(circles, (circle)=> {
         return [`circle${i++}`, circle.texture]
       })
     )
 
     ssb.buildToCache('new-atlas')
-    // let sp = this.game.add.sprite(100, 100, 'avatar')
-    // let squareSprite = this.game.add.sprite(100, 100, 'new-atlas', 'square')
-    // let circleSprite = this.game.add.sprite(300, 300, 'new-atlas', 'circle')
-    // squareSprite.anchor.set(.5)
-    // TweenMax.to(squareSprite, 1, {angle: 360, repeat: -1})
-    // let img = this.game.add.image(100, 100, 'new-sprite')
   }
 
-  addCircle(r, thickness) {
+  addCircle(i) {
+    if (useSpritesheetBuilder) {
+      return this.game.add.image(0, 0, 'new-atlas', `circle${i}`)
+    } else {
+      return this.game.add.image(0, 0, this.makeBmd(50, 10))
+    }
+  }
+
+  update() {
+    super.update()
+
+    this.circles.forEach((_item)=> {
+      _item.x += Util.randInt(-10, 10)
+      _item.y += Util.randInt(-10, 10)
+    })
+  }
+
+  makeBmd(r, thickness) {
     let w = r*2 + thickness
     let bmd = this.game.add.bitmapData(w, w)
     let c = bmd.ctx
