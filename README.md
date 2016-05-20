@@ -18,7 +18,7 @@ Search for `ADD NEW TESTS HERE` to add new tests yourself!
 
 Original setup came from `https://github.com/belohlavek/phaser-es6-boilerplate`
 
-## Results on iPhone 6
+## Results on iPhone 6S
 
 ### Mask Vs Redraw Bitmap Data (based on 50 circles / iphone 6s mobile safari)
 
