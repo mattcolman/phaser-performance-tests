@@ -22,23 +22,26 @@ Original setup came from `https://github.com/belohlavek/phaser-es6-boilerplate`
 
 ### Mask Vs Redraw Bitmap Data (based on 50 circles / iphone 6s mobile safari)
 
-mask     : idle fps ~23
-           redraw fps ~23
-           time to complete frame ~1.7ms
+mask     
+- idle fps ~23
+- redraw fps ~23
+- time to complete frame ~1.7ms
 
-redrawBmp:
-           idle fps ~60
-           redraw fps ~10 (degrades as time goes on)
-           time to complete frame ~9ms (increases as time goes on)
+redraw bitmap data
+- idle fps ~60
+- redraw fps ~10 (degrades as time goes on)
+- time to complete frame ~9ms (increases as time goes on)
 
-MASK WINS!
+THE WINNER IS...depends!
 
 ### BitmapFont Vs WebFont (based on iphone 6s mobile safari)
 
-bitmapFont : idle fps ~60
-             redraw fps ~60
+bitmapFont 
+- idle fps ~60
+- redraw fps ~60
 
-webFont    : idle fps ~60
-             redraw fps ~20
+webFont    
+- idle fps ~60
+- redraw fps ~20
 
-BITMAP FONT wins!
+THE WINNER IS...BITMAP FONT!
